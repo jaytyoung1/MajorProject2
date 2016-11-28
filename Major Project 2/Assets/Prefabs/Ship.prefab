@@ -23,6 +23,8 @@ GameObject:
   - 135: {fileID: 135000012599145268}
   - 23: {fileID: 23000010702365606}
   - 54: {fileID: 54000013125823680}
+  - 114: {fileID: 114000011541730800}
+  - 114: {fileID: 114000011404987490}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -94,6 +96,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114000011404987490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014141087952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85fec4656d7ad78439966e076114bdac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000011541730800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014141087952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db15f76deda01c4d8f30b8a9e793e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135000012599145268
 SphereCollider:
   m_ObjectHideFlags: 1
