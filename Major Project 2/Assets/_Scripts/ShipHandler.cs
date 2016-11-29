@@ -29,12 +29,12 @@ public class ShipHandler : MonoBehaviour
         if (posInput.z != 0)
         {
             speed = 150.0f;
-            rbody.drag = 10;
+            //rbody.drag = 10;
         }
         else
         {
             speed = 0;
-            rbody.drag = 0;
+            //rbody.drag = 10;
         }
 
         rbody.AddRelativeForce(posInput * speed);
