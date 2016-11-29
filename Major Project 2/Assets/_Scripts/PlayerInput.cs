@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerInput : MonoBehaviour
 {
     ShipHandler sHandler;
+    public BulletShooter bShooter;
 
     Vector3 moveInput;
     Vector3 rotInput;
@@ -14,12 +15,13 @@ public class PlayerInput : MonoBehaviour
 	void Start ()
     {
         sHandler = GetComponent<ShipHandler>();
+        //bShooter = GetComponent<BulletShooter>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        //receive input
+        //receive movement input
         float thrust = Input.GetAxisRaw("Thrust");
 
         float roll = Input.GetAxisRaw("Roll");
@@ -29,6 +31,13 @@ public class PlayerInput : MonoBehaviour
         //{
         //    powered = true;
         //}
+
+        //receive shooting input
+        if (Input.GetMouseButtonDown(0))
+        {
+            //Debug.Log("left click");
+            bShooter.shoot();
+        }
 
         moveInput = new Vector3(0, 0, thrust);
         rotInput = new Vector3(pitch, yaw, roll);

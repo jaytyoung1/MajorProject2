@@ -22,7 +22,7 @@ public class AsteroidManager : MonoBehaviour
             float newY = ship.gameObject.transform.position.y + Random.Range(-50, 50);
             float newZ = ship.gameObject.transform.position.z + Random.Range(10, 50);
             newPosition = new Vector3(newX, newY, newZ);
-            Debug.Log(newPosition);
+            //Debug.Log(newPosition);
 
             GameObject newAsteroid = (GameObject)Instantiate(asteroid, newPosition, Quaternion.identity);
             newAsteroid.GetComponent<Rigidbody>().AddForce(new Vector3((Random.Range(-100, 100)), (Random.Range(-100, 100)), (Random.Range(-100, 100))));

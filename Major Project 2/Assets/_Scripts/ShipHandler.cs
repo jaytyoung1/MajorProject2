@@ -5,10 +5,10 @@ public class ShipHandler : MonoBehaviour
 {
     Vector3 posInput;
     Vector3 rotInput;
-    public Rigidbody rbody;
+    Rigidbody rbody;
 
     //bool powered = true;
-    float speed = 150.0f;
+    float shipSpeed = 150.0f;
 
     void Start()
     {
@@ -28,16 +28,17 @@ public class ShipHandler : MonoBehaviour
     {
         if (posInput.z != 0)
         {
-            speed = 150.0f;
+            shipSpeed = 150.0f;
             //rbody.drag = 10;
         }
         else
         {
-            speed = 0;
+            shipSpeed = 0;
             //rbody.drag = 10;
         }
 
-        rbody.AddRelativeForce(posInput * speed);
+        rbody.AddRelativeForce(posInput * shipSpeed);
         rbody.AddRelativeTorque(rotInput);
+        //transform.Rotate(rotInput);
     }
 }
