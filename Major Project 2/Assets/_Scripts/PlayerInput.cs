@@ -21,14 +21,17 @@ public class PlayerInput : MonoBehaviour
     {
         //receive input
         float thrust = Input.GetAxisRaw("Thrust");
+
         float roll = Input.GetAxisRaw("Roll");
+        float yaw = Input.GetAxisRaw("Mouse X");
+        float pitch = Input.GetAxisRaw("Mouse Y");
         //if (thrust > 0 || thrust < 0)
         //{
         //    powered = true;
         //}
 
         moveInput = new Vector3(0, 0, thrust);
-        rotInput = new Vector3(0, 0, roll);
+        rotInput = new Vector3(pitch, yaw, roll);
 	}
 
     void FixedUpdate()
