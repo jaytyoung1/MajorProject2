@@ -1,12 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Explosion : MonoBehaviour
 {
+    //public GameObject scoreMg;
     public GameObject explosionPrefab;
+    //[HideInInspector]
+    //public ScoreManager scoreScript;
     private Vector3 newPosition;
 
-    //public ParticleSystem explosion;
+    // Use this for initialization
+    void Start()
+    {
+        //scoreScript = scoreMg.GetComponent<ScoreManager>();
+    }
 
     void OnCollisionEnter(Collision coll)
     {
@@ -14,29 +22,24 @@ public class Explosion : MonoBehaviour
         {
             Destroy(coll.gameObject);
             explode();
+
+            int score = PlayerPrefs.GetInt("Score");
+            score = score + 1;
+            PlayerPrefs.SetInt("Score", score);
         }
     }
 
     void explode()
     {
-        Debug.Log("in explode function");
-        //ParticleSystem explo = GetComponent<ParticleSystem>();
-        // explo.Play();
-        //explosion.Play();
         newPosition = gameObject.transform.position;
         GameObject exp = (GameObject)Instantiate(explosionPrefab, newPosition, Quaternion.identity);
         Destroy(this.gameObject);
-        //explosionPrefab.PlayAnimation();
         Destroy(exp, 2.0f);
     }
 
-    // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Update is called once per frame
+    void Update ()
+    {
+
+    }
 }

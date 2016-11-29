@@ -108,7 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f6d7972f0a856429ddc0da6a4e58f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreMg: {fileID: 1000012875380882, guid: faea099637fc0f54a8c412bd1a5bd0ba, type: 2}
   explosionPrefab: {fileID: 1000013959126946, guid: ada377f1bea7e2f45ba021c693063e32,
+    type: 2}
+  scoreTextBox: {fileID: 114000011112715344, guid: b37e2d83506e63f4f942c7c01035900c,
     type: 2}
 --- !u!135 &135000013160839840
 SphereCollider:

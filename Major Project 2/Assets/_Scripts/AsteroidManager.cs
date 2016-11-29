@@ -25,7 +25,7 @@ public class AsteroidManager : MonoBehaviour
             //Debug.Log(newPosition);
 
             GameObject newAsteroid = (GameObject)Instantiate(asteroids[Random.Range(0, 4)], newPosition, Quaternion.Euler(Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f)));
-            newAsteroid.GetComponent<Rigidbody>().AddForce(new Vector3((Random.Range(-200.0f, 200.0f)), (Random.Range(-200.0f, 200.0f)), (Random.Range(-200.0f, 200.0f))));
+            //newAsteroid.GetComponent<Rigidbody>().AddForce(new Vector3((Random.Range(-200.0f, 200.0f)), (Random.Range(-200.0f, 200.0f)), (Random.Range(-200.0f, 200.0f))));
         }
     }
 
