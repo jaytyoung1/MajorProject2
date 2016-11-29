@@ -436,6 +436,11 @@ Prefab:
       propertyPath: bShooter
       value: 
       objectReference: {fileID: 436641792}
+    - target: {fileID: 65000011587066060, guid: a5988096ac613034da9ef6a789dc830a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5988096ac613034da9ef6a789dc830a, type: 2}
   m_IsPrefabParent: 0

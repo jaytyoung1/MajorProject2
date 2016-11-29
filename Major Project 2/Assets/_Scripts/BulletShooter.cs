@@ -13,7 +13,7 @@ public class BulletShooter : MonoBehaviour
         //Debug.Log("shoot");
         float newX = gameObject.transform.position.x;
         float newY = gameObject.transform.position.y;
-        float newZ = gameObject.transform.position.z + 0.1f;
+        float newZ = gameObject.transform.position.z - 0.25f;
         bulletPosition = new Vector3(newX, newY, newZ);
         Debug.Log(bulletPosition);
 
