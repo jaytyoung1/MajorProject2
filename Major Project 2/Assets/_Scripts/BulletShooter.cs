@@ -7,6 +7,7 @@ public class BulletShooter : MonoBehaviour
     Vector3 bulletDirection;
     public GameObject bullet;
     float bulletSpeed = 750.0f;
+    public AudioSource shootingAudio;
 
     public void shoot()
     {
@@ -21,6 +22,7 @@ public class BulletShooter : MonoBehaviour
 
        // bulletDirection = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.1f));
         newBullet.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward * bulletSpeed);
+        shootingAudio.Play();
         //newBullet.GetComponent<Rigidbody>().AddForce(bulletDirection * bulletSpeed);
     }
 
