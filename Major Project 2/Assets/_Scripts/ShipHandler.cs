@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ShipHandler : MonoBehaviour
 {
     Vector3 posInput;
     Vector3 rotInput;
     Rigidbody rbody;
-
+    public AudioSource restartAudio;
     //bool powered = true;
     float shipSpeed = 150.0f;
 
@@ -42,8 +43,25 @@ public class ShipHandler : MonoBehaviour
         //transform.Rotate(rotInput);
     }
 
-    public void playExplosionAudio()
+    void OnCollisionEnter(Collision coll)
     {
-
+        if (coll.gameObject.CompareTag("Asteroid"))
+        {
+            Debug.Log("collision");
+            restartAudio.Play();
+            StartCoroutine(restartGame());
+            //SceneManager.LoadScene("GameScene");
+        }
     }
+
+    IEnumerator restartGame()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        SceneManager.LoadScene("GameScene");
+    }
+
+    //public void playExplosionAudio()
+    //{
+
+    //}
 }
