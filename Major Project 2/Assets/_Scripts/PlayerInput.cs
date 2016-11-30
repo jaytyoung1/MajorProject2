@@ -6,6 +6,10 @@ public class PlayerInput : MonoBehaviour
     ShipHandler sHandler;
     public BulletShooter bShooter;
     public AudioSource thrustAudio;
+    public AudioSource explosionAudio;
+
+    [HideInInspector]
+    public bool isExplosion = false;
 
     Vector3 moveInput;
     Vector3 rotInput;
@@ -22,6 +26,11 @@ public class PlayerInput : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        //if (isExplosion)
+        //    Debug.Log("EXPLOSION\n\n");
+        //else if (!isExplosion)
+        //    Debug.Log("is not Explosion");
+
         //receive movement input
         float thrust = Input.GetAxisRaw("Thrust");
 
@@ -51,6 +60,16 @@ public class PlayerInput : MonoBehaviour
         rotInput = new Vector3(pitch, yaw, roll);
 	}
 
+    public void playExplosionAudio()
+    {
+        explosionAudio.Play();
+    }
+
+    //public IEnumerator playExplosionAudioCO()
+    //{
+    //    explosionAudio.Play();
+    //    yield return new WaitForSecondsRealtime(5);
+    //}
     void FixedUpdate()
     {
         //send input

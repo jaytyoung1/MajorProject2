@@ -488,6 +488,15 @@ Prefab:
       propertyPath: thrustAudio
       value: 
       objectReference: {fileID: 1491237434}
+    - target: {fileID: 114000014170591178, guid: 1fea93267d974554abf366db82293aa9,
+        type: 2}
+      propertyPath: explosionAudio
+      value: 
+      objectReference: {fileID: 1491237443}
+    - target: {fileID: 4000012882153644, guid: 1fea93267d974554abf366db82293aa9, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1fea93267d974554abf366db82293aa9, type: 2}
   m_IsPrefabParent: 0
@@ -658,6 +667,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &1491237443 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82000011144628328, guid: 1fea93267d974554abf366db82293aa9,
+    type: 2}
+  m_PrefabInternal: {fileID: 798976140}
 --- !u!1001 &1512277491
 Prefab:
   m_ObjectHideFlags: 0

@@ -104,7 +104,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012056193160}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e0495502edfc59e458577dbcd947eeff, type: 3}
@@ -184,8 +184,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ship: {fileID: 1000013837184686, guid: 1fea93267d974554abf366db82293aa9, type: 2}
+  audioManager: {fileID: 1000012310715948, guid: 25500174a8d74304fb5caa36b250a920,
+    type: 2}
   explosionPrefab: {fileID: 1000013959126946, guid: ada377f1bea7e2f45ba021c693063e32,
     type: 2}
+  explosionAudio: {fileID: 82000013385943308}
 --- !u!135 &135000013160839840
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public class Explosion : MonoBehaviour
 {
     public GameObject ship;
-    public ShipHandler sHandler;
+    public GameObject audioManager;
+    ShipHandler sHandler;
+    PlayerInput playerIn;
 
     //public GameObject scoreMg;
     public GameObject explosionPrefab;
@@ -14,30 +16,45 @@ public class Explosion : MonoBehaviour
     private Vector3 newPosition;
 
     //public GameObject audioHandler;
-    AudioSource explosionAudio;
+    public AudioSource explosionAudio;
 
     // Use this for initialization
     void Start()
     {
         //scoreScript = scoreMg.GetComponent<ScoreManager>();
-        explosionAudio = ship.GetComponent<AudioSource>();
+        //explosionAudio = ship.GetComponent<AudioSource>();
+        playerIn = ship.GetComponent<PlayerInput>();
     }
 
     void OnCollisionEnter(Collision coll)
     {
         if (coll.gameObject.CompareTag("Asteroid"))
         {
+            GameObject audioMg = (GameObject)Instantiate(audioManager, ship.gameObject.transform.position, Quaternion.identity);
+            //explosionAudio.Play();
+            //playerIn.isExplosion = true;
+            //playerIn.playExplosionAudio();
+            //StartCoroutine(playerIn.playExplosionAudioCO());
            // explosionAudio = coll.gameObject.GetComponent<AudioSource>();
             //Debug.Log(explosionAudio);
-            explosionAudio.Play();
+            //explosionAudio.Play();
             Destroy(coll.gameObject);
             explode();
 
             int score = PlayerPrefs.GetInt("Score");
             score = score + 1;
             PlayerPrefs.SetInt("Score", score);
+            //playerIn.isExplosion = false;
+            //StartCoroutine(wait());
         }
     }
+
+    //IEnumerator wait()
+    //{
+    //    Debug.Log("in coroutine");
+    //    yield return new WaitForSecondsRealtime(3);
+    //    playerIn.isExplosion = false;
+    //}
 
     void explode()
     {
