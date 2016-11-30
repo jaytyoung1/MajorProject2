@@ -7,7 +7,7 @@ public class AsteroidManager : MonoBehaviour
     public GameObject ship;
     public GameObject[] asteroids;
     GameObject[] asteroidCollection;
-    public int totalAsteroids = 10;
+    public int totalAsteroids = 20;
     private Vector3 newPosition;
     //ArrayList AsteroidCollection = new ArrayList();
     //List<GameObject> asteroidCollection; 
