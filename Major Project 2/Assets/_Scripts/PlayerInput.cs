@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -56,7 +57,12 @@ public class PlayerInput : MonoBehaviour
             bShooter.shoot();
         }
 
-        moveInput = new Vector3(0, 0, thrust);
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("GameScene");
+        }
+
+            moveInput = new Vector3(0, 0, thrust);
         rotInput = new Vector3(pitch, yaw, roll);
 	}
 
