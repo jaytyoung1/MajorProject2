@@ -26,6 +26,7 @@ GameObject:
   - 114: {fileID: 114000010173363956}
   - 199: {fileID: 199000011408115304}
   - 198: {fileID: 198000012252951650}
+  - 82: {fileID: 82000013385943308}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -97,6 +98,80 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &82000013385943308
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012056193160}
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e0495502edfc59e458577dbcd947eeff, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114000010173363956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108,10 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f6d7972f0a856429ddc0da6a4e58f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreMg: {fileID: 1000012875380882, guid: faea099637fc0f54a8c412bd1a5bd0ba, type: 2}
+  ship: {fileID: 1000013837184686, guid: 1fea93267d974554abf366db82293aa9, type: 2}
   explosionPrefab: {fileID: 1000013959126946, guid: ada377f1bea7e2f45ba021c693063e32,
-    type: 2}
-  scoreTextBox: {fileID: 114000011112715344, guid: b37e2d83506e63f4f942c7c01035900c,
     type: 2}
 --- !u!135 &135000013160839840
 SphereCollider:

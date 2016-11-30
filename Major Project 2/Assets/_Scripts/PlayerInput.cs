@@ -5,6 +5,7 @@ public class PlayerInput : MonoBehaviour
 {
     ShipHandler sHandler;
     public BulletShooter bShooter;
+    public AudioSource thrustAudio;
 
     Vector3 moveInput;
     Vector3 rotInput;
@@ -27,10 +28,17 @@ public class PlayerInput : MonoBehaviour
         float roll = Input.GetAxisRaw("Roll");
         float yaw = Input.GetAxisRaw("Mouse X");
         float pitch = Input.GetAxisRaw("Mouse Y");
-        //if (thrust > 0 || thrust < 0)
-        //{
-        //    powered = true;
-        //}
+        if (thrust > 0 || thrust < 0)
+        {
+            //powered = true;
+            if (!thrustAudio.isPlaying)
+                thrustAudio.Play();
+        }
+        else
+        {
+            if (thrustAudio.isPlaying)
+                thrustAudio.Stop();
+        }
 
         //receive shooting input
         if (Input.GetMouseButtonDown(0))
