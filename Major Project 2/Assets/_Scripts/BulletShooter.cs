@@ -23,6 +23,7 @@ public class BulletShooter : MonoBehaviour
        // bulletDirection = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.1f));
         newBullet.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward * bulletSpeed);
         shootingAudio.Play();
+        Destroy(newBullet, 5.0f);
         //newBullet.GetComponent<Rigidbody>().AddForce(bulletDirection * bulletSpeed);
     }
 
