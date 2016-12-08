@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HeartManager : MonoBehaviour
+public class HeartSpawner : MonoBehaviour
 {
     public GameObject ship;
     public GameObject heart;

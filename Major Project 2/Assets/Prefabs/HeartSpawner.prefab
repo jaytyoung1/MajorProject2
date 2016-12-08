@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000013454394984}
   - 114: {fileID: 114000012695807728}
   m_Layer: 0
-  m_Name: HeartManager
+  m_Name: HeartSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013754115876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.575692, y: -3.58032, z: 15.941814}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -51,4 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87134cb5b9c9c384cb5faae99b4b0e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heart: {fileID: 0}
+  ship: {fileID: 0}
+  heart: {fileID: 134674, guid: 8a2b9fe17763d2946ad000498978f6c7, type: 2}
+  totalHearts: 5
