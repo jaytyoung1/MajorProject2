@@ -12,7 +12,7 @@ public class HealthManager : MonoBehaviour
     {
         lifeCounter = startingLives;
         PlayerPrefs.SetInt("Lives", lifeCounter);
-
+        
         for (int i = lifeCounter; i < hearts.Length; i++)
         {
             hearts[i].SetActive(false);

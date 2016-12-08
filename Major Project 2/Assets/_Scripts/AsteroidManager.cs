@@ -34,7 +34,7 @@ public class AsteroidManager : MonoBehaviour
             Vector3 direction = ship.transform.position - newAsteroid.transform.position;
             direction = direction.normalized;
             newAsteroid.GetComponent<Rigidbody>().AddForce(direction * 40.0f); // Random.Range(10.0f, 50.0f));
-            newAsteroid.GetComponent<Rigidbody>().AddTorque(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10));
+            newAsteroid.GetComponent<Rigidbody>().AddTorque(Random.Range(-25, 25), Random.Range(-25, 25), Random.Range(-25, 25));
         }
         //add asteroids to array
         asteroidCollection = GameObject.FindGameObjectsWithTag("Asteroid");
