@@ -50,8 +50,11 @@ public class ShipHandler : MonoBehaviour
         {
             Debug.Log("collision");
             restartAudio.Play();
-            StartCoroutine(restartGame());
-            //SceneManager.LoadScene("GameScene");
+            healthMg.decreaseLives(PlayerPrefs.GetInt("Lives"));
+            if (PlayerPrefs.GetInt("Lives") > 0)
+                StartCoroutine(deathRestartCo());
+            else
+                StartCoroutine(restartGame());
         }
 
         //if ship collides with heart, destroy heart and add life
@@ -61,6 +64,13 @@ public class ShipHandler : MonoBehaviour
             Destroy(coll.gameObject);
             healthMg.increaseLives(PlayerPrefs.GetInt("Lives"));
         }
+    }
+
+    IEnumerator deathRestartCo()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        transform.position = new Vector3(0, 0, 0);
+        
     }
 
     IEnumerator restartGame()
