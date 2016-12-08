@@ -8,6 +8,7 @@ public class ShipHandler : MonoBehaviour
     Vector3 rotInput;
     Rigidbody rbody;
     public AudioSource restartAudio;
+    public HealthManager healthMg;
     //bool powered = true;
     float shipSpeed = 150.0f;
 
@@ -51,6 +52,14 @@ public class ShipHandler : MonoBehaviour
             restartAudio.Play();
             StartCoroutine(restartGame());
             //SceneManager.LoadScene("GameScene");
+        }
+
+        //if ship collides with heart, destroy heart and add life
+        if (coll.gameObject.CompareTag("Heart"))
+        {
+            Debug.Log("collided with heart");
+            Destroy(coll.gameObject);
+            healthMg.increaseLives(PlayerPrefs.GetInt("Lives"));
         }
     }
 

@@ -198,8 +198,8 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 134674, guid: 8a2b9fe17763d2946ad000498978f6c7, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_TagString
+      value: Heart
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a2b9fe17763d2946ad000498978f6c7, type: 2}
@@ -593,6 +593,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012061500456, guid: 1fea93267d974554abf366db82293aa9,
+        type: 2}
+      propertyPath: healthMg
+      value: 
+      objectReference: {fileID: 1578298684}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1fea93267d974554abf366db82293aa9, type: 2}
   m_IsPrefabParent: 0
