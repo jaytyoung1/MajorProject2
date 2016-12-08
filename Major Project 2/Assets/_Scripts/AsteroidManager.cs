@@ -29,17 +29,12 @@ public class AsteroidManager : MonoBehaviour
             newPosition = new Vector3(newX, newY, newZ);
             //Debug.Log(newPosition);
 
-            GameObject newAsteroid = (GameObject)Instantiate(asteroids[Random.Range(0, 4)], newPosition, Quaternion.Euler(Random.Range(100.0f, 360.0f), Random.Range(100.0f, 360.0f), Random.Range(100.0f, 360.0f)));
+            GameObject newAsteroid = (GameObject)Instantiate(asteroids[Random.Range(0, 4)], newPosition, Quaternion.identity);
 
             Vector3 direction = ship.transform.position - newAsteroid.transform.position;
             direction = direction.normalized;
             newAsteroid.GetComponent<Rigidbody>().AddForce(direction * 40.0f); // Random.Range(10.0f, 50.0f));
-
-            //newAsteroid.gameObject.transform.LookAt(ship.gameObject.transform);
-
-            //newAsteroid.GetComponent<Rigidbody>().AddForce(new Vector3((Random.Range(-200.0f, 200.0f)), (Random.Range(-200.0f, 200.0f)), (Random.Range(-200.0f, 200.0f))));
-
-            //newAsteroid.GetComponent<Rigidbody>().AddForce(newAsteroid.gameObject.transform.forward);
+            newAsteroid.GetComponent<Rigidbody>().AddTorque(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10));
         }
         //add asteroids to array
         asteroidCollection = GameObject.FindGameObjectsWithTag("Asteroid");

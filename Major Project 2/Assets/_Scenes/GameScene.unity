@@ -685,14 +685,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114000013260596794, guid: 076e9b63d21d36b40a9fbe4118af84c8,
         type: 2}
-      propertyPath: totalAsteroids
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013260596794, guid: 076e9b63d21d36b40a9fbe4118af84c8,
-        type: 2}
-      propertyPath: remainingAsteroidsText
+      propertyPath: ship
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1491237433}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 076e9b63d21d36b40a9fbe4118af84c8, type: 2}
   m_IsPrefabParent: 0
