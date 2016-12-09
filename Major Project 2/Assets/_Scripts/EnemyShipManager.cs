@@ -17,6 +17,7 @@ public class EnemyShipManager : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        facingDirections = new Quaternion[totalEnemyShips]; 
         spawnEnemyShips();
         InvokeRepeating("updateEnemyShipsDirection", 3.0f, 5.0f);
     }
@@ -37,10 +38,8 @@ public class EnemyShipManager : MonoBehaviour
             direction.y = Random.Range(-25.0f, 25.0f);
             direction.z = Random.Range(-25.0f, 25.0f);
             direction = direction.normalized;
+
             newEnemyShip.GetComponent<Rigidbody>().AddForce(direction * 100.0f); // Random.Range(10.0f, 50.0f));
-
-            //enemyShip.transform.Rotate(Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f));
-
         }
         enemyShipCollection = GameObject.FindGameObjectsWithTag("EnemyShip");
         for (int i = 0; i < enemyShipCollection.Length; i++)
@@ -51,6 +50,11 @@ public class EnemyShipManager : MonoBehaviour
     }
 
     void updateEnemyShipsDirection()
+    {
+        StartCoroutine(updateEnemyShipsCO());
+    }
+
+    IEnumerator updateEnemyShipsCO()
     {
         //Debug.Log("update direction");
         //yield return new WaitForSecondsRealtime(10);
@@ -64,25 +68,21 @@ public class EnemyShipManager : MonoBehaviour
             updatedDirection.z = updatedDirection.z + Random.Range(-100.0f, 100.0f);
 
             updatedDirection = updatedDirection.normalized;
-            enemyShipCollection[i].GetComponent<Rigidbody>().AddForce(updatedDirection * 100.0f); // Random.Range(10.0f, 50.0f));
-            //enemyShipCollection[i].transform.Rotate(enemyShipCollection[i].GetComponent<Rigidbody>().velocity);
 
-            //StartCoroutine("shootEnemyBullets");
+            Rigidbody rb = enemyShipCollection[i].GetComponent<Rigidbody>();
+
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.AddForce(updatedDirection * 100.0f);
+            //enemyShipCollection[i].transform.Rotate(enemyShipCollection[i].GetComponent<Rigidbody>().velocity);
 
             //enemyShipCollection[i].transform.up = enemyShipCollection[i].GetComponent<Rigidbody>().velocity;
 
         }
-        //yield return null;
+        yield return null;
     }
 
-    //IEnumerator shootEnemyBullets()
-    //{
-    //    yield return new WaitForSecondsRealtime(Random.Range(1.0f, 3.0f));
-    //    float newX = gameObject.transform.position.x;
-    //    float newY = gameObject.transform.position.y;
-    //    float newZ = gameObject.transform.position.z;
-    //}
-
+   
     // Update is called once per frame
     void Update ()
     {

@@ -52,6 +52,11 @@ public class AsteroidManager : MonoBehaviour
     //IEnumerator updateAsteroidsDirection()
     void updateAsteroidsDirection()
     {
+        StartCoroutine(updateAsteroidsCO());
+    }
+
+    IEnumerator updateAsteroidsCO()
+    {
         //Debug.Log("update direction");
         //yield return new WaitForSecondsRealtime(10);
         for (int i = 0; i < asteroidCollection.Length; i++)
@@ -64,9 +69,14 @@ public class AsteroidManager : MonoBehaviour
             updatedDirection.z = updatedDirection.z + Random.Range(-100.0f, 100.0f);
 
             updatedDirection = updatedDirection.normalized;
-            asteroidCollection[i].GetComponent<Rigidbody>().AddForce(updatedDirection * 40.0f); // Random.Range(10.0f, 50.0f));
+
+            Rigidbody rb = asteroidCollection[i].GetComponent<Rigidbody>();
+
+            rb.velocity = Vector3.zero;
+            rb.AddForce(updatedDirection * 40.0f);
+            //asteroidCollection[i].GetComponent<Rigidbody>().AddForce(updatedDirection * 40.0f); // Random.Range(10.0f, 50.0f));
         }
-        //yield return null;
+        yield return null;
     }
 
     // Update is called once per frame
