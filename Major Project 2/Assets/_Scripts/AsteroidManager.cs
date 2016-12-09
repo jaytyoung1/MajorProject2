@@ -52,10 +52,11 @@ public class AsteroidManager : MonoBehaviour
     //IEnumerator updateAsteroidsDirection()
     void updateAsteroidsDirection()
     {
-        //Debug.Log("update direction");
+        Debug.Log("update direction");
         //yield return new WaitForSecondsRealtime(10);
         for (int i = 0; i < asteroidCollection.Length; i++)
         {
+            Debug.Log(ship.transform.position);
             Vector3 updatedDirection = ship.transform.position - asteroidCollection[i].transform.position;
 
             //updatedDirection.x = updatedDirection.x + Random.Range(-100.0f, 100.0f);
