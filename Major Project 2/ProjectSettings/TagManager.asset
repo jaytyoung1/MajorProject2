@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - ScoreTextBox
   - Heart
+  - EnemyShip
   layers:
   - Default
   - TransparentFX

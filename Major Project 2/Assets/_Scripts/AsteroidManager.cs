@@ -59,9 +59,9 @@ public class AsteroidManager : MonoBehaviour
             //Debug.Log(ship.transform.position);
             Vector3 updatedDirection = ship.transform.position - asteroidCollection[i].transform.position;
 
-            //updatedDirection.x = updatedDirection.x + Random.Range(-100.0f, 100.0f);
-            //updatedDirection.y = updatedDirection.y + Random.Range(-100.0f, 100.0f);
-            //updatedDirection.z = updatedDirection.z + Random.Range(-100.0f, 100.0f);
+            updatedDirection.x = updatedDirection.x + Random.Range(-100.0f, 100.0f);
+            updatedDirection.y = updatedDirection.y + Random.Range(-100.0f, 100.0f);
+            updatedDirection.z = updatedDirection.z + Random.Range(-100.0f, 100.0f);
 
             updatedDirection = updatedDirection.normalized;
             asteroidCollection[i].GetComponent<Rigidbody>().AddForce(updatedDirection * 40.0f); // Random.Range(10.0f, 50.0f));

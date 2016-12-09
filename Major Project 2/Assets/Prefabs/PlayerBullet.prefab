@@ -28,7 +28,7 @@ GameObject:
   - 198: {fileID: 198000012252951650}
   - 82: {fileID: 82000013385943308}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: PlayerBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
