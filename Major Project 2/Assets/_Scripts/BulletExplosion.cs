@@ -2,30 +2,14 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Explosion : MonoBehaviour
+public class BulletExplosion : MonoBehaviour
 {
+    public AudioSource explosionAudio;
     public GameObject ship;
     public GameObject audioManager;
     public GameObject[] smallAsteroidCollection;
-    ShipHandler sHandler;
-    PlayerInput playerIn;
-
-    //public GameObject scoreMg;
     public GameObject explosionPrefab;
-    //[HideInInspector]
-    //public ScoreManager scoreScript;
     private Vector3 newPosition;
-
-    //public GameObject audioHandler;
-    public AudioSource explosionAudio;
-
-    // Use this for initialization
-    void Start()
-    {
-        //scoreScript = scoreMg.GetComponent<ScoreManager>();
-        //explosionAudio = ship.GetComponent<AudioSource>();
-        playerIn = ship.GetComponent<PlayerInput>();
-    }
 
     void OnCollisionEnter(Collision coll)
     {
@@ -95,14 +79,6 @@ public class Explosion : MonoBehaviour
         smallerAsteroid2.GetComponent<Rigidbody>().AddForce(direction2 * 80.0f); // Random.Range(10.0f, 50.0f));
         smallerAsteroid2.GetComponent<Rigidbody>().AddTorque(Random.Range(-25, 25), Random.Range(-25, 25), Random.Range(-25, 25));
 
-
-
         Destroy(exp, 2.0f);
-    }
-
-    // Update is called once per frame
-    void Update ()
-    {
-
     }
 }

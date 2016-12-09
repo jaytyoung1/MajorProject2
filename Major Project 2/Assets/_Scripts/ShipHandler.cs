@@ -51,15 +51,7 @@ public class ShipHandler : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Asteroid") || coll.gameObject.CompareTag("BigAsteroid"))
         {
-            redScreen.gameObject.SetActive(true);
-            StartCoroutine("fadeRedScreen");
-            //Debug.Log("collision");
-            restartAudio.Play();
-            healthMg.decreaseLives(PlayerPrefs.GetInt("Lives"));
-            if (PlayerPrefs.GetInt("Lives") > 0)
-                StartCoroutine(deathRestartCo());
-            else
-                StartCoroutine(restartGame());
+            loseLifeAndRestart();
         }
 
         //if ship collides with heart, destroy heart and add life
@@ -69,6 +61,19 @@ public class ShipHandler : MonoBehaviour
             Destroy(coll.gameObject);
             healthMg.increaseLives(PlayerPrefs.GetInt("Lives"));
         }
+    }
+
+    public void loseLifeAndRestart()
+    {
+        redScreen.gameObject.SetActive(true);
+        StartCoroutine("fadeRedScreen");
+        //Debug.Log("collision");
+        restartAudio.Play();
+        healthMg.decreaseLives(PlayerPrefs.GetInt("Lives"));
+        if (PlayerPrefs.GetInt("Lives") > 0)
+            StartCoroutine(deathRestartCo());
+        else
+            StartCoroutine(restartGame());
     }
 
     IEnumerator fadeRedScreen()

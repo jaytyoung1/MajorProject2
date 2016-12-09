@@ -15,12 +15,6 @@ public class EnemyBulletShooter : MonoBehaviour
         InvokeRepeating("enemyFireRepeat", 3.0f, 3.0f);
     }
 
-    // Update is called once per frame
-    void Update ()
-    {
-
-    }
-
     void enemyFireRepeat()
     {
         StartCoroutine("shootEnemyBullets");
@@ -38,9 +32,9 @@ public class EnemyBulletShooter : MonoBehaviour
         GameObject ship = GameObject.FindGameObjectWithTag("Player");
 
         Vector3 updatedDirection = ship.transform.position - newBullet.transform.position;
-        updatedDirection.x = updatedDirection.x + Random.Range(-10.0f, 10.0f);
-        updatedDirection.y = updatedDirection.y + Random.Range(-10.0f, 10.0f);
-        updatedDirection.z = updatedDirection.z + Random.Range(-10.0f, 10.0f);
+        //updatedDirection.x = updatedDirection.x + Random.Range(-10.0f, 10.0f);
+        //updatedDirection.y = updatedDirection.y + Random.Range(-10.0f, 10.0f);
+        //updatedDirection.z = updatedDirection.z + Random.Range(-10.0f, 10.0f);
         updatedDirection = updatedDirection.normalized;
 
         newBullet.GetComponent<Rigidbody>().AddForce(updatedDirection * bulletSpeed);

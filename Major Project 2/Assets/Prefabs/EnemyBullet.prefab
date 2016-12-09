@@ -23,10 +23,10 @@ GameObject:
   - 135: {fileID: 135000013160839840}
   - 23: {fileID: 23000013119746424}
   - 54: {fileID: 54000013946775770}
-  - 114: {fileID: 114000010173363956}
   - 199: {fileID: 199000011408115304}
   - 198: {fileID: 198000012252951650}
   - 82: {fileID: 82000013385943308}
+  - 114: {fileID: 114000011609909422}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: Bullet
@@ -107,7 +107,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e0495502edfc59e458577dbcd947eeff, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a92deb9ae0ab4674d80e8584c4897c6b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -172,23 +172,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114000010173363956
+--- !u!114 &114000011609909422
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012056193160}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f6d7972f0a856429ddc0da6a4e58f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 96f0708eb4b1e634793ce0da85791711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 1000013837184686, guid: 1fea93267d974554abf366db82293aa9, type: 2}
-  audioManager: {fileID: 1000012310715948, guid: 25500174a8d74304fb5caa36b250a920,
-    type: 2}
-  explosionPrefab: {fileID: 1000013959126946, guid: ada377f1bea7e2f45ba021c693063e32,
-    type: 2}
-  explosionAudio: {fileID: 82000013385943308}
 --- !u!135 &135000013160839840
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -251,7 +245,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 337250613
+  randomSeed: 1062263099
   InitialModule:
     serializedVersion: 2
     enabled: 1
