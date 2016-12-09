@@ -6,6 +6,7 @@ public class Explosion : MonoBehaviour
 {
     public GameObject ship;
     public GameObject audioManager;
+    public GameObject[] smallAsteroidCollection;
     ShipHandler sHandler;
     PlayerInput playerIn;
 
@@ -31,38 +32,71 @@ public class Explosion : MonoBehaviour
         if (coll.gameObject.CompareTag("Asteroid") || coll.gameObject.CompareTag("EnemyShip"))
         {
             GameObject audioMg = (GameObject)Instantiate(audioManager, ship.gameObject.transform.position, Quaternion.identity);
-            //explosionAudio.Play();
-            //playerIn.isExplosion = true;
-            //playerIn.playExplosionAudio();
-            //StartCoroutine(playerIn.playExplosionAudioCO());
-           // explosionAudio = coll.gameObject.GetComponent<AudioSource>();
-            //Debug.Log(explosionAudio);
-            //explosionAudio.Play();
             Destroy(coll.gameObject);
+
             explode();
 
             int score = PlayerPrefs.GetInt("Score");
             score = score + 1;
             PlayerPrefs.SetInt("Score", score);
-            //playerIn.isExplosion = false;
-            //StartCoroutine(wait());
+        }
+
+        if (coll.gameObject.CompareTag("BigAsteroid"))
+        {
+            GameObject audioMg = (GameObject)Instantiate(audioManager, ship.gameObject.transform.position, Quaternion.identity);
+            Destroy(coll.gameObject);
+
+            explodeAndSpawnSmallerAsteroids();
+
+            int score = PlayerPrefs.GetInt("Score");
+            score = score + 1;
+            PlayerPrefs.SetInt("Score", score);
         }
     }
-
-    //IEnumerator wait()
-    //{
-    //    Debug.Log("in coroutine");
-    //    yield return new WaitForSecondsRealtime(3);
-    //    playerIn.isExplosion = false;
-    //}
 
     void explode()
     {
         newPosition = gameObject.transform.position;
         GameObject exp = (GameObject)Instantiate(explosionPrefab, newPosition, Quaternion.identity);
-        //explosionAudio = exp.gameObject.GetComponent<AudioSource>();
-        //explosionAudio.Play();
         Destroy(this.gameObject);
+        Destroy(exp, 2.0f);
+    }
+
+    void explodeAndSpawnSmallerAsteroids()
+    {
+        newPosition = gameObject.transform.position;
+        GameObject exp = (GameObject)Instantiate(explosionPrefab, newPosition, Quaternion.identity);
+        Destroy(this.gameObject);
+        
+        //spawn two smaller asteroids
+        GameObject smallerAsteroid1 = (GameObject)Instantiate(smallAsteroidCollection[Random.Range(0, 4)], newPosition, Quaternion.identity);
+
+        //shrink the scale in half
+        smallerAsteroid1.transform.localScale = smallerAsteroid1.transform.localScale * 0.5f;
+
+        //GameObject smallerAsteroid2 = (GameObject)Instantiate(smallAsteroidCollection[Random.Range(0, 4)], newPosition, Quaternion.identity);
+
+        Vector3 direction1 = ship.transform.position - smallerAsteroid1.transform.position;
+        direction1 = direction1.normalized;
+        smallerAsteroid1.GetComponent<Rigidbody>().AddForce(direction1 * 80.0f); // Random.Range(10.0f, 50.0f));
+        smallerAsteroid1.GetComponent<Rigidbody>().AddTorque(Random.Range(-25, 25), Random.Range(-25, 25), Random.Range(-25, 25));
+
+
+        //spawn two smaller asteroids
+        GameObject smallerAsteroid2 = (GameObject)Instantiate(smallAsteroidCollection[Random.Range(0, 4)], newPosition, Quaternion.identity);
+
+        //shrink the scale in half
+        smallerAsteroid2.transform.localScale = smallerAsteroid2.transform.localScale * 0.5f;
+
+        //GameObject smallerAsteroid2 = (GameObject)Instantiate(smallAsteroidCollection[Random.Range(0, 4)], newPosition, Quaternion.identity);
+
+        Vector3 direction2 = ship.transform.position - smallerAsteroid2.transform.position;
+        direction2 = direction2.normalized;
+        smallerAsteroid2.GetComponent<Rigidbody>().AddForce(direction2 * 80.0f); // Random.Range(10.0f, 50.0f));
+        smallerAsteroid2.GetComponent<Rigidbody>().AddTorque(Random.Range(-25, 25), Random.Range(-25, 25), Random.Range(-25, 25));
+
+
+
         Destroy(exp, 2.0f);
     }
 

@@ -186,6 +186,11 @@ MonoBehaviour:
   ship: {fileID: 1000013837184686, guid: 1fea93267d974554abf366db82293aa9, type: 2}
   audioManager: {fileID: 1000012310715948, guid: 25500174a8d74304fb5caa36b250a920,
     type: 2}
+  smallAsteroidCollection:
+  - {fileID: 100000, guid: 79bce83937e43d042843a359e671ca99, type: 2}
+  - {fileID: 100000, guid: e2abe2db222fa9c49a111c088001ebcf, type: 2}
+  - {fileID: 100000, guid: e349b6a927183154d9bf449b09b8e413, type: 2}
+  - {fileID: 100000, guid: 7ca168569b7f1c5479b28f521d0a1a32, type: 2}
   explosionPrefab: {fileID: 1000013959126946, guid: ada377f1bea7e2f45ba021c693063e32,
     type: 2}
   explosionAudio: {fileID: 82000013385943308}

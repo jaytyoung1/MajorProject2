@@ -29,7 +29,7 @@ public class AsteroidManager : MonoBehaviour
             newPosition = new Vector3(newX, newY, newZ);
             //Debug.Log(newPosition);
 
-            GameObject newAsteroid = (GameObject)Instantiate(asteroids[Random.Range(0, 4)], newPosition, Quaternion.identity);
+            GameObject newAsteroid = (GameObject)Instantiate(asteroids[Random.Range(0, 7)], newPosition, Quaternion.identity);
 
             Vector3 direction = ship.transform.position - newAsteroid.transform.position;
             direction = direction.normalized;
@@ -38,6 +38,8 @@ public class AsteroidManager : MonoBehaviour
         }
         //add asteroids to array
         asteroidCollection = GameObject.FindGameObjectsWithTag("Asteroid");
+        asteroidCollection = GameObject.FindGameObjectsWithTag("BigAsteroid");
+
         //foreach (GameObject ast in asteroidCollection)
         //{
         //    Debug.Log(ast);
@@ -83,5 +85,6 @@ public class AsteroidManager : MonoBehaviour
     void Update ()
     {
         asteroidCollection = GameObject.FindGameObjectsWithTag("Asteroid");
+        asteroidCollection = GameObject.FindGameObjectsWithTag("BigAsteroid");
     }
 }

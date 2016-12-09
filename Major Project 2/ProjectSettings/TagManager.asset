@@ -9,6 +9,7 @@ TagManager:
   - ScoreTextBox
   - Heart
   - EnemyShip
+  - BigAsteroid
   layers:
   - Default
   - TransparentFX

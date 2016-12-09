@@ -14,7 +14,7 @@ GameObject:
   - 54: {fileID: 54000014082038696}
   m_Layer: 0
   m_Name: Rocks 03 prefab
-  m_TagString: Asteroid
+  m_TagString: BigAsteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

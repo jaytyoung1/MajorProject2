@@ -49,7 +49,7 @@ public class ShipHandler : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     {
-        if (coll.gameObject.CompareTag("Asteroid"))
+        if (coll.gameObject.CompareTag("Asteroid") || coll.gameObject.CompareTag("BigAsteroid"))
         {
             redScreen.gameObject.SetActive(true);
             StartCoroutine("fadeRedScreen");
