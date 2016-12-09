@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ShipHandler : MonoBehaviour
 {
@@ -9,11 +10,13 @@ public class ShipHandler : MonoBehaviour
     Rigidbody rbody;
     public AudioSource restartAudio;
     public HealthManager healthMg;
+    public Image redScreen;
     //bool powered = true;
     float shipSpeed = 150.0f;
 
     void Start()
     {
+        redScreen.gameObject.SetActive(false);
         rbody = GetComponent<Rigidbody>();
     }
 
@@ -48,7 +51,9 @@ public class ShipHandler : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Asteroid"))
         {
-            Debug.Log("collision");
+            redScreen.gameObject.SetActive(true);
+            StartCoroutine("fadeRedScreen");
+            //Debug.Log("collision");
             restartAudio.Play();
             healthMg.decreaseLives(PlayerPrefs.GetInt("Lives"));
             if (PlayerPrefs.GetInt("Lives") > 0)
@@ -66,21 +71,29 @@ public class ShipHandler : MonoBehaviour
         }
     }
 
+    IEnumerator fadeRedScreen()
+    {
+        for (float f = 0.75f; f >= 0; f -= 0.02f)
+        {
+            Color c = redScreen.color;
+            //Color c = renderer.material.color;
+            c.a = f;
+            redScreen.color = c;
+            yield return null;  
+        }
+    }
+
     IEnumerator deathRestartCo()
     {
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.75f);
+        redScreen.gameObject.SetActive(false);
         transform.position = new Vector3(0, 0, 0);
         
     }
 
     IEnumerator restartGame()
     {
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.75f);
         SceneManager.LoadScene("GameScene");
     }
-
-    //public void playExplosionAudio()
-    //{
-
-    //}
 }
