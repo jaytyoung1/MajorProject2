@@ -28,7 +28,7 @@ public class Explosion : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     {
-        if (coll.gameObject.CompareTag("Asteroid"))
+        if (coll.gameObject.CompareTag("Asteroid") || coll.gameObject.CompareTag("EnemyShip"))
         {
             GameObject audioMg = (GameObject)Instantiate(audioManager, ship.gameObject.transform.position, Quaternion.identity);
             //explosionAudio.Play();

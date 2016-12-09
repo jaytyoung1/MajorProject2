@@ -30,8 +30,8 @@ public class EnemyBulletShooter : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(Random.Range(1.0f, 3.0f));
         float newX = gameObject.transform.position.x;
-        float newY = gameObject.transform.position.y;
-        float newZ = gameObject.transform.position.z;
+        float newY = gameObject.transform.position.y + 1;
+        float newZ = gameObject.transform.position.z - 2.0f;
         bulletPosition = new Vector3(newX, newY, newZ);
 
         GameObject newBullet = (GameObject)Instantiate(bullet, bulletPosition, Quaternion.identity);

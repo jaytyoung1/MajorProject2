@@ -86,6 +86,7 @@ public class EnemyShipManager : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
+        enemyShipCollection = GameObject.FindGameObjectsWithTag("EnemyShip");
         for (int i = 0; i < enemyShipCollection.Length; i++)
         {
             enemyShipCollection[i].transform.rotation = Quaternion.LookRotation(enemyShipCollection[i].GetComponent<Rigidbody>().velocity);
