@@ -44,7 +44,6 @@ public class ShipHandler : MonoBehaviour
 
         rbody.AddRelativeForce(posInput * shipSpeed);
         rbody.AddRelativeTorque(rotInput);
-        //transform.Rotate(rotInput);
     }
 
     void OnCollisionEnter(Collision coll)
@@ -53,11 +52,13 @@ public class ShipHandler : MonoBehaviour
         {
             loseLifeAndRestart();
         }
+    }
 
+    void OnTriggerEnter(Collider coll)
+    {
         //if ship collides with heart, destroy heart and add life
         if (coll.gameObject.CompareTag("Heart"))
         {
-            Debug.Log("collided with heart");
             Destroy(coll.gameObject);
             healthMg.increaseLives(PlayerPrefs.GetInt("Lives"));
         }
@@ -67,7 +68,6 @@ public class ShipHandler : MonoBehaviour
     {
         redScreen.gameObject.SetActive(true);
         StartCoroutine("fadeRedScreen");
-        //Debug.Log("collision");
         restartAudio.Play();
         healthMg.decreaseLives(PlayerPrefs.GetInt("Lives"));
         if (PlayerPrefs.GetInt("Lives") > 0)

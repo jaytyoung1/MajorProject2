@@ -4,7 +4,7 @@ using System.Collections;
 public class HealthManager : MonoBehaviour
 {
     public GameObject[] hearts;
-    public int startingLives;
+    public int startingLives = 3;
     private int lifeCounter;
 
     // Use this for initialization
