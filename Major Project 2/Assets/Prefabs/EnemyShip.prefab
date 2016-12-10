@@ -24,7 +24,7 @@ GameObject:
   - 64: {fileID: 64000011675790412}
   - 54: {fileID: 54000011350689954}
   - 114: {fileID: 114000010560706806}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyShip
   m_TagString: EnemyShip
   m_Icon: {fileID: 0}

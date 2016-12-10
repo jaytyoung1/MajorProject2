@@ -208,34 +208,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a2b9fe17763d2946ad000498978f6c7, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &132062664
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 132062665}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &132062665
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 132062664}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.94165, y: 2.3880062, z: 92.68524}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
 --- !u!1 &147863695
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +610,12 @@ Prefab:
       propertyPath: redScreen
       value: 
       objectReference: {fileID: 1325187852}
-    m_RemovedComponents: []
+    - target: {fileID: 1000011171473436, guid: 1fea93267d974554abf366db82293aa9, type: 2}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 82000010980383400, guid: 1fea93267d974554abf366db82293aa9, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 1fea93267d974554abf366db82293aa9, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &842024400 stripped
@@ -790,7 +767,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013244195914, guid: 3e4f1b0c67f858840b0ff1bff84d6096, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114000012227143930, guid: 3e4f1b0c67f858840b0ff1bff84d6096,
         type: 2}
@@ -1016,6 +993,60 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 37577744}
+    - target: {fileID: 114000011475002544, guid: 83276bec6e11ae443ae5bccb9ec62857,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 7b9b5914ea13cfb4d9033275480e4607,
+        type: 3}
+    - target: {fileID: 114000011246375108, guid: 83276bec6e11ae443ae5bccb9ec62857,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 7b9b5914ea13cfb4d9033275480e4607,
+        type: 3}
+    - target: {fileID: 114000011955476938, guid: 83276bec6e11ae443ae5bccb9ec62857,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 7b9b5914ea13cfb4d9033275480e4607,
+        type: 3}
+    - target: {fileID: 114000014031781694, guid: 83276bec6e11ae443ae5bccb9ec62857,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 7b9b5914ea13cfb4d9033275480e4607,
+        type: 3}
+    - target: {fileID: 224000013149523082, guid: 83276bec6e11ae443ae5bccb9ec62857,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013149523082, guid: 83276bec6e11ae443ae5bccb9ec62857,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 144
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011955476938, guid: 83276bec6e11ae443ae5bccb9ec62857,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011955476938, guid: 83276bec6e11ae443ae5bccb9ec62857,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011246375108, guid: 83276bec6e11ae443ae5bccb9ec62857,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 223000013955865586, guid: 83276bec6e11ae443ae5bccb9ec62857,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83276bec6e11ae443ae5bccb9ec62857, type: 2}
   m_IsPrefabParent: 0
