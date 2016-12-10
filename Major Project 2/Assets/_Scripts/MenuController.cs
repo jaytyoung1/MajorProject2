@@ -11,10 +11,10 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("WelcomeScene");
     }
 
-    public void loadGameScene()
+    public void loadLevel1()
     {
         PlayerPrefs.SetInt("Score", 0);
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Level1");
     }
 
     public void loadHighScoresScene()

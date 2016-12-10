@@ -59,7 +59,7 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("WelcomeScene");
         }
 
             moveInput = new Vector3(0, 0, thrust);

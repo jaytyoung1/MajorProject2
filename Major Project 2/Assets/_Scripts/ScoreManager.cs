@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public Text scoreTextBox;
+    public Text asteroidsRemainingTextBox;
 
     [HideInInspector]
     public static int score;
@@ -13,13 +14,14 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         score = 0;
-        PlayerPrefs.DeleteKey("Score");
+        //PlayerPrefs.DeleteKey("Score");
     }
 
     // Update is called once per frame
     void Update()
     {
         scoreTextBox.text = "Score: " + PlayerPrefs.GetInt("Score");
+        asteroidsRemainingTextBox.text = "Asteroids Remaining: " + PlayerPrefs.GetInt("asteroidsRemaining");
     }
 
     public void incrementScore()

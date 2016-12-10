@@ -13,7 +13,20 @@ public class BulletExplosion : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     {
-        if (coll.gameObject.CompareTag("Asteroid") || coll.gameObject.CompareTag("EnemyShip"))
+        if (coll.gameObject.CompareTag("Asteroid"))
+        {
+            PlayerPrefs.SetInt("asteroidsRemaining", (PlayerPrefs.GetInt("asteroidsRemaining") - 1));
+            GameObject audioMg = (GameObject)Instantiate(audioManager, ship.gameObject.transform.position, Quaternion.identity);
+            Destroy(coll.gameObject);
+
+            explode();
+
+            int score = PlayerPrefs.GetInt("Score");
+            score = score + 1;
+            PlayerPrefs.SetInt("Score", score);
+        }
+
+        if (coll.gameObject.CompareTag("EnemyShip"))
         {
             GameObject audioMg = (GameObject)Instantiate(audioManager, ship.gameObject.transform.position, Quaternion.identity);
             Destroy(coll.gameObject);

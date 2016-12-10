@@ -20,6 +20,14 @@ public class ShipHandler : MonoBehaviour
         rbody = GetComponent<Rigidbody>();
     }
 
+    void Update()
+    {
+        //if (PlayerPrefs.GetInt("asteroidsRemaining") <= 0)
+        //{
+        //    SceneManager.LoadScene("WelcomeScene");
+        //}
+    }
+
     public void MoveInput(Vector3 move, Vector3 rote)
     {
         posInput = move;
@@ -99,6 +107,8 @@ public class ShipHandler : MonoBehaviour
     IEnumerator restartGame()
     {
         yield return new WaitForSecondsRealtime(0.75f);
-        SceneManager.LoadScene("GameScene");
+
+        //NEEDS TO LOAD DISPLAY SCORE SCENE
+        SceneManager.LoadScene("Level1");
     }
 }
