@@ -41,7 +41,7 @@ public class ShipHandler : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     {
-        if (coll.gameObject.CompareTag("Asteroid") || coll.gameObject.CompareTag("BigAsteroid"))
+        if (coll.gameObject.CompareTag("Asteroid") || coll.gameObject.CompareTag("BigAsteroid") || coll.gameObject.CompareTag("EnemyShip"))
         {
             loseLifeAndRestart();
         }

@@ -46,7 +46,7 @@ public class AsteroidManager : MonoBehaviour
         }
         PlayerPrefs.SetInt("asteroidsRemaining", asteroidsRemaining);
 
-        Debug.Log("asteroids remaining = " + asteroidsRemaining);
+       // Debug.Log("asteroids remaining = " + asteroidsRemaining);
     }
 
     void spawnAsteroids()
