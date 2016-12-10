@@ -8,30 +8,18 @@ public class PlayerInput : MonoBehaviour
     public BulletShooter bShooter;
     public AudioSource thrustAudio;
     public AudioSource explosionAudio;
-
-    [HideInInspector]
-    public bool isExplosion = false;
-
     Vector3 moveInput;
     Vector3 rotInput;
-
-    //bool powered = true;
 
 	// Use this for initialization
 	void Start ()
     {
         sHandler = GetComponent<ShipHandler>();
-        //bShooter = GetComponent<BulletShooter>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        //if (isExplosion)
-        //    Debug.Log("EXPLOSION\n\n");
-        //else if (!isExplosion)
-        //    Debug.Log("is not Explosion");
-
         //receive movement input
         float thrust = Input.GetAxisRaw("Thrust");
 
@@ -53,7 +41,6 @@ public class PlayerInput : MonoBehaviour
         //receive shooting input
         if (Input.GetMouseButtonDown(0))
         {
-            //Debug.Log("left click");
             bShooter.shoot();
         }
 
@@ -62,7 +49,7 @@ public class PlayerInput : MonoBehaviour
             SceneManager.LoadScene("WelcomeScene");
         }
 
-            moveInput = new Vector3(0, 0, thrust);
+        moveInput = new Vector3(0, 0, thrust);
         rotInput = new Vector3(pitch, yaw, roll);
 	}
 
@@ -71,11 +58,6 @@ public class PlayerInput : MonoBehaviour
         explosionAudio.Play();
     }
 
-    //public IEnumerator playExplosionAudioCO()
-    //{
-    //    explosionAudio.Play();
-    //    yield return new WaitForSecondsRealtime(5);
-    //}
     void FixedUpdate()
     {
         //send input

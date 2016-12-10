@@ -123,6 +123,7 @@ public class HighScoreManager : MonoBehaviour
         //PlayerPrefs.DeleteKey("InitialsEntered");
         PlayerPrefs.DeleteKey("Score");
         PlayerPrefs.DeleteKey("Lives");
+        PlayerPrefs.DeleteKey("finalScore");
         SceneManager.LoadScene("GameScene");
     }
 
@@ -134,6 +135,8 @@ public class HighScoreManager : MonoBehaviour
         //PlayerPrefs.DeleteKey("InitialsEntered");
         PlayerPrefs.DeleteKey("Score");
         PlayerPrefs.DeleteKey("Lives");
+        PlayerPrefs.DeleteKey("finalScore");
+        PlayerPrefs.DeleteKey("InitialsEntered");
         SceneManager.LoadScene("WelcomeScene");
     }
 
