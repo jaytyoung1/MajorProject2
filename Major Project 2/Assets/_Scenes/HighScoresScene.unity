@@ -331,7 +331,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 243285469}
-        m_MethodName: loadHighScoresScene
+        m_MethodName: resetHighScores
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

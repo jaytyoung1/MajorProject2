@@ -21,4 +21,10 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene("HighScoresScene");
     }
+
+    public void resetHighScores()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("HighScoresScene");
+    }
 }
