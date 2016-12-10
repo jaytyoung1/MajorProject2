@@ -630,7 +630,9 @@ Prefab:
       propertyPath: ship
       value: 
       objectReference: {fileID: 1491237433}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114000010703462468, guid: 83276bec6e11ae443ae5bccb9ec62857, type: 2}
+    - {fileID: 114000010339864300, guid: 83276bec6e11ae443ae5bccb9ec62857, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 83276bec6e11ae443ae5bccb9ec62857, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1491237433 stripped

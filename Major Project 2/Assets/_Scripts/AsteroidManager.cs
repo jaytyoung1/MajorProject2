@@ -47,7 +47,7 @@ public class AsteroidManager : MonoBehaviour
 
         if (asteroidsRemaining <= 0)
         {
-            StartCoroutine(finishGame());
+            StartCoroutine(levelComplete());
             //SceneManager.LoadScene("WelcomeScene");
         }
         PlayerPrefs.SetInt("asteroidsRemaining", asteroidsRemaining);
@@ -121,9 +121,9 @@ public class AsteroidManager : MonoBehaviour
         yield return null;
     }
 
-    IEnumerator finishGame()
+    IEnumerator levelComplete()
     {
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(2);
         SceneManager.LoadScene(sceneToLoad);
     }
 }
