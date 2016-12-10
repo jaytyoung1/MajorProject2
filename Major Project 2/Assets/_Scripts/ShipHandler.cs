@@ -20,35 +20,20 @@ public class ShipHandler : MonoBehaviour
         rbody = GetComponent<Rigidbody>();
     }
 
-    void Update()
-    {
-        //if (PlayerPrefs.GetInt("asteroidsRemaining") <= 0)
-        //{
-        //    SceneManager.LoadScene("WelcomeScene");
-        //}
-    }
-
     public void MoveInput(Vector3 move, Vector3 rote)
     {
         posInput = move;
         rotInput = rote;
         //powered = power;
-
         ActuallyMove();
     }
 
     void ActuallyMove()
     {
         if (posInput.z != 0)
-        {
             shipSpeed = 150.0f;
-            //rbody.drag = 10;
-        }
         else
-        {
             shipSpeed = 0;
-            //rbody.drag = 10;
-        }
 
         rbody.AddRelativeForce(posInput * shipSpeed);
         rbody.AddRelativeTorque(rotInput);
@@ -101,7 +86,6 @@ public class ShipHandler : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.75f);
         redScreen.gameObject.SetActive(false);
         transform.position = new Vector3(0, 0, 0);
-        
     }
 
     IEnumerator restartGame()
@@ -109,6 +93,6 @@ public class ShipHandler : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.75f);
 
         //NEEDS TO LOAD DISPLAY SCORE SCENE
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("DeathScene");
     }
 }

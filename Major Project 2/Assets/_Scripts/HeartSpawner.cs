@@ -18,13 +18,13 @@ public class HeartSpawner : MonoBehaviour
     {
         for (int i = 0; i < totalHearts; i++)
         {
-            float newX = ship.gameObject.transform.position.x + Random.Range(-10.0f, 10.0f);
-            float newY = ship.gameObject.transform.position.y + Random.Range(-10.0f, 10.0f);
-            float newZ = ship.gameObject.transform.position.z + Random.Range(10.0f, 10.0f);
+            float newX = ship.gameObject.transform.position.x + Random.Range(-50.0f, 50.0f);
+            float newY = ship.gameObject.transform.position.y + Random.Range(-50.0f, 50.0f);
+            float newZ = ship.gameObject.transform.position.z + Random.Range(-50.0f, 50.0f);
             newPosition = new Vector3(newX, newY, newZ);
 
             GameObject spawnedHeart = (GameObject)Instantiate(heart, newPosition, Quaternion.identity);
-            spawnedHeart.GetComponent<Rigidbody>().AddTorque(0, 20, 0);
+            spawnedHeart.GetComponent<Rigidbody>().AddTorque(Random.Range(-50.0f, 50.0f), Random.Range(-50.0f, 50.0f), Random.Range(-50.0f, 50.0f));
         }
     }
 }

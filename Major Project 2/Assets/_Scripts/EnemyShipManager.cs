@@ -6,18 +6,12 @@ public class EnemyShipManager : MonoBehaviour
     public GameObject ship;
     public GameObject enemyShip;
     public GameObject[] enemyShipCollection;
-    public int totalEnemyShips = 3;
+    public int totalEnemyShips;
     private Vector3 newPosition;
-    private Quaternion[] facingDirections;
-    //Vector3 bulletPosition;
-    //Vector3 bulletDirection;
-    //public GameObject bullet;
-    //float bulletSpeed = 750.0f;
 
     // Use this for initialization
     void Start ()
     {
-        facingDirections = new Quaternion[totalEnemyShips]; 
         spawnEnemyShips();
         InvokeRepeating("updateEnemyShipsDirection", 3.0f, 5.0f);
     }
@@ -26,9 +20,9 @@ public class EnemyShipManager : MonoBehaviour
     {
         for (int i = 0; i < totalEnemyShips; i++)
         {
-            float newX = ship.gameObject.transform.position.x + Random.Range(-10.0f, 10.0f);
-            float newY = ship.gameObject.transform.position.y + Random.Range(-10.0f, 10.0f);
-            float newZ = ship.gameObject.transform.position.z + Random.Range(10.0f, 10.0f);
+            float newX = ship.gameObject.transform.position.x + Random.Range(-40.0f, 40.0f);
+            float newY = ship.gameObject.transform.position.y + Random.Range(-40.0f, 40.0f);
+            float newZ = ship.gameObject.transform.position.z + Random.Range(-40.0f, 40.0f);
             newPosition = new Vector3(newX, newY, newZ);
 
             GameObject newEnemyShip = (GameObject)Instantiate(enemyShip, newPosition, Quaternion.identity);
@@ -39,14 +33,9 @@ public class EnemyShipManager : MonoBehaviour
             direction.z = Random.Range(-25.0f, 25.0f);
             direction = direction.normalized;
 
-            newEnemyShip.GetComponent<Rigidbody>().AddForce(direction * 100.0f); // Random.Range(10.0f, 50.0f));
+            newEnemyShip.GetComponent<Rigidbody>().AddForce(direction * 150.0f); // Random.Range(10.0f, 50.0f));
         }
         enemyShipCollection = GameObject.FindGameObjectsWithTag("EnemyShip");
-        for (int i = 0; i < enemyShipCollection.Length; i++)
-        {
-            //enemyShipCollection[i].transform.rotation = Quaternion.LookRotation(enemyShipCollection[i].GetComponent<Rigidbody>().velocity);
-            facingDirections[i] = enemyShipCollection[i].transform.rotation;
-        }
     }
 
     void updateEnemyShipsDirection()

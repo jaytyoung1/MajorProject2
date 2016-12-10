@@ -32,9 +32,9 @@ public class EnemyBulletShooter : MonoBehaviour
         GameObject ship = GameObject.FindGameObjectWithTag("Player");
 
         Vector3 updatedDirection = ship.transform.position - newBullet.transform.position;
-        //updatedDirection.x = updatedDirection.x + Random.Range(-10.0f, 10.0f);
-        //updatedDirection.y = updatedDirection.y + Random.Range(-10.0f, 10.0f);
-        //updatedDirection.z = updatedDirection.z + Random.Range(-10.0f, 10.0f);
+        updatedDirection.x = updatedDirection.x + Random.Range(-0.75f, 0.75f);
+        updatedDirection.y = updatedDirection.y + Random.Range(-0.75f, 0.75f);
+        updatedDirection.z = updatedDirection.z + Random.Range(-0.75f, 0.75f);
         updatedDirection = updatedDirection.normalized;
 
         newBullet.GetComponent<Rigidbody>().AddForce(updatedDirection * bulletSpeed);

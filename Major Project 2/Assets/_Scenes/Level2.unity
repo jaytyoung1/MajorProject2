@@ -127,7 +127,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011065903104, guid: df11933a0f2dc1443ae3c1311c058cc4, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114000012774619644, guid: df11933a0f2dc1443ae3c1311c058cc4,
         type: 2}
@@ -236,7 +236,7 @@ Prefab:
     - target: {fileID: 114000012227143930, guid: 3e4f1b0c67f858840b0ff1bff84d6096,
         type: 2}
       propertyPath: totalEnemyShips
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e4f1b0c67f858840b0ff1bff84d6096, type: 2}
@@ -283,7 +283,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011242764458, guid: 076e9b63d21d36b40a9fbe4118af84c8, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114000013260596794, guid: 076e9b63d21d36b40a9fbe4118af84c8,
         type: 2}
@@ -333,7 +333,7 @@ Prefab:
     - target: {fileID: 114000013260596794, guid: 076e9b63d21d36b40a9fbe4118af84c8,
         type: 2}
       propertyPath: numberOfStartingAsteroids
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 076e9b63d21d36b40a9fbe4118af84c8, type: 2}
@@ -451,7 +451,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
 --- !u!1 &1730053364
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +560,7 @@ Prefab:
     - target: {fileID: 224000011651085072, guid: 83276bec6e11ae443ae5bccb9ec62857,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000011651085072, guid: 83276bec6e11ae443ae5bccb9ec62857,
         type: 2}

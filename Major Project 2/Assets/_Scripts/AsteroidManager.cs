@@ -9,8 +9,8 @@ public class AsteroidManager : MonoBehaviour
     public GameObject[] asteroids;
     public string sceneToLoad;
 
-    GameObject[] smallAsteroidCollection;
-    GameObject[] bigAsteroidCollection;
+    public GameObject[] smallAsteroidCollection;
+    public GameObject[] bigAsteroidCollection;
 
     //List<GameObject> smallAsteroidCollection = new List<GameObject>();
 
@@ -31,12 +31,6 @@ public class AsteroidManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //if (PlayerPrefs.GetInt("asteroidsRemaining") <= 0)
-        //{
-        //    SceneManager.LoadScene("WelcomeScene");
-        //}
-
         //smallAsteroidCollection.AddRange(GameObject.FindGameObjectsWithTag("Asteroid"));
         //smallAsteroidCollection.AddRange(GameObject.FindGameObjectsWithTag("BigAsteroid"));
         //asteroidsRemaining = smallAsteroidCollection.Count;
@@ -61,7 +55,7 @@ public class AsteroidManager : MonoBehaviour
         {
             float newX = ship.gameObject.transform.position.x + Random.Range(-50.0f, 50.0f);
             float newY = ship.gameObject.transform.position.y + Random.Range(-50.0f, 50.0f);
-            float newZ = ship.gameObject.transform.position.z + Random.Range(10.0f, 50.0f);
+            float newZ = ship.gameObject.transform.position.z + Random.Range(-50.0f, 50.0f);
             newPosition = new Vector3(newX, newY, newZ);
             //Debug.Log(newPosition);
 
@@ -75,18 +69,6 @@ public class AsteroidManager : MonoBehaviour
         //add asteroids to array
         smallAsteroidCollection = GameObject.FindGameObjectsWithTag("Asteroid");
         bigAsteroidCollection = GameObject.FindGameObjectsWithTag("BigAsteroid");
-        //asteroidCollection.AddRange(GameObject.FindGameObjectsWithTag("Asteroid"));
-        //asteroidCollection.AddRange(GameObject.FindGameObjectsWithTag("BigAsteroid"));
-
-        //foreach (GameObject ast in asteroidCollection)
-        //{
-        //    Debug.Log(ast);
-        //}
-    }
-
-    void FixedUpdate()
-    {
-        //StartCoroutine(updateAsteroidsDirection());
     }
 
     //IEnumerator updateAsteroidsDirection()
@@ -115,7 +97,25 @@ public class AsteroidManager : MonoBehaviour
             Rigidbody rb = smallAsteroidCollection[i].GetComponent<Rigidbody>();
 
             rb.velocity = Vector3.zero;
-            rb.AddForce(updatedDirection * 40.0f);
+            rb.AddForce(updatedDirection * Random.Range(40.0f, 80.0f));
+            //asteroidCollection[i].GetComponent<Rigidbody>().AddForce(updatedDirection * 40.0f); // Random.Range(10.0f, 50.0f));
+        }
+
+        for (int i = 0; i < bigAsteroidCollection.Length; i++)
+        {
+            //Debug.Log(ship.transform.position);
+            Vector3 updatedDirection = ship.transform.position - bigAsteroidCollection[i].transform.position;
+
+            updatedDirection.x = updatedDirection.x + Random.Range(-100.0f, 100.0f);
+            updatedDirection.y = updatedDirection.y + Random.Range(-100.0f, 100.0f);
+            updatedDirection.z = updatedDirection.z + Random.Range(-100.0f, 100.0f);
+
+            updatedDirection = updatedDirection.normalized;
+
+            Rigidbody rb = bigAsteroidCollection[i].GetComponent<Rigidbody>();
+
+            rb.velocity = Vector3.zero;
+            rb.AddForce(updatedDirection * Random.Range(40.0f, 80.0f));
             //asteroidCollection[i].GetComponent<Rigidbody>().AddForce(updatedDirection * 40.0f); // Random.Range(10.0f, 50.0f));
         }
         yield return null;
