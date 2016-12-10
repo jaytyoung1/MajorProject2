@@ -627,6 +627,11 @@ Prefab:
       propertyPath: m_Text
       value: Level 2
       objectReference: {fileID: 0}
+    - target: {fileID: 223000013955865586, guid: 83276bec6e11ae443ae5bccb9ec62857,
+        type: 2}
+      propertyPath: m_PlaneDistance
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000010703462468, guid: 83276bec6e11ae443ae5bccb9ec62857, type: 2}
     - {fileID: 114000010339864300, guid: 83276bec6e11ae443ae5bccb9ec62857, type: 2}
